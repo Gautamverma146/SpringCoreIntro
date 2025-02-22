@@ -1,15 +1,19 @@
 package com.Capgemini.springcoreintro.controller;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/sayhello")
+@Controller
 public class MyController {
 
     @GetMapping("/hello")
     public String sayhello(){
         return "hello from Bridgelabz";
+    }
+    @GetMapping("/hello1")
+    public String sayhello1 (Model model){
+        model.addAttribute("message","Hello From Bridgelabz");
+        return "hello2";
     }
 }
